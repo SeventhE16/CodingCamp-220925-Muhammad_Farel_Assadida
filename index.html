@@ -1,101 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <link class="logoweb" rel="shortcut icon" href="assets/Depotkayu.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Depot Kayu Kembang Jaya</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo" >
-            <img class="img" src="assets/Depotkayu.jpg" alt="Logo" width="70px" height="70px">
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <img src="assets/Depotkayu.jpg" alt="Logo">
+            <span>Depot Kayu</span>
         </div>
+
         <nav>
             <ul>
                 <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#description">Profil</a></li>
-                <li><a href="https://wa.me/6281237965000">Kontak Kami</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kontak">Kontak</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <hr>
+<main>
 
-    <main>
-        
-        <div>
-        <section id="home" class="home">
-
-            <img src="assets/gambardepan.jpg" alt="Foto Depot Kayu" class="home-image" content="width=device-width, initial-scale=1.0">
-
-            <h2 class="home_h1">Selamat datang <span id="username"></span> di Depot Kayu Kembang Jaya
-            </h2>
-
-            <p id="about" class="description"> Kami menyediakan berbagai jenis kayu seperti Kayu glugu (kelapa), sengon, jawa, kalimantan, dll untuk kebutuhan konstruksi anda dari dasar. Kami berkomitmen untuk memberikan produk terbaik dan
-                layanan pelanggan yang unggul. Jelajahi koleksi kayu kami dan temukan solusi sempurna untuk proyek Anda.
+<section id="home" class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>Depot Kayu Kembang Jaya</h1>
+            <p>
+                Menyediakan berbagai jenis kayu berkualitas untuk kebutuhan konstruksi Anda.
             </p>
-            
-        </section>
+            <a href="https://wa.me/6281237965000" class="btn">Order Sekarang</a>
         </div>
 
-        <div>
-        <section id="about" class="about" content="width=device-width, initial-scale=1.0">
-            <h2 class="home_h2">Produk Kayu Unggulan</h2>
-            <table class="products-table">
-                <tr>
-                    <td>
-                        <div class="product-image"><img src="assets/kayuglugu.jpg" alt="Kayu Glugu" width="150px" height="150px"></div>
-                        <div class="product-name">Kayu Glugu</div>
-                    </td>
-                </tr>>
-                <tr>    
-                    <td>
-                        <div class="product-image"><img src="assets/kayumahoni.jpg" alt="Kayu Jawa" width="150px" height="150px"></div>
-                        <div class="product-name">Kayu Mahoni</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="product-image"><img src="assets/kayusengon.jpg" alt="Kayu Sengon" width="150px" height="150px"></div>
-                        <div class="product-name">Kayu Sengon</div>
-                    </td>
-                </tr>
-            </table>
-        </section>
+        <img src="assets/gambardepan.jpg" alt="Depot Kayu">
+    </div>
+</section>
+
+<section id="produk" class="produk">
+    <div class="container">
+        <h2>Produk Unggulan</h2>
+
+        <div class="product-grid">
+
+            <div class="card">
+                <img src="assets/kayuglugu.jpg" alt="Kayu Glugu">
+                <h3>Kayu Glugu</h3>
+            </div>
+
+            <div class="card">
+                <img src="assets/kayumahoni.jpg" alt="Kayu Mahoni">
+                <h3>Kayu Mahoni</h3>
+            </div>
+
+            <div class="card">
+                <img src="assets/kayusengon.jpg" alt="Kayu Sengon">
+                <h3>Kayu Sengon</h3>
+            </div>
+
         </div>
+    </div>
+</section>
 
+<section id="kontak" class="kontak">
+    <div class="container">
+        <h2>Hubungi Kami</h2>
 
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Nama">
+            <input type="email" id="email" placeholder="Email">
+            <textarea id="message" placeholder="Pesan"></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+</section>
 
-        <section id="message_us" class="min-h-[100vh] flex flex-col justify-center items-center gap-[20px]">
-            <h2 class="text-[30px] font-bold">Hubungi Kami</h2>
-            <form>
-                <div class="mb-[10px]">
-                    <label for="name" class="block mb-[5px]">Nama:</label>
-                    <input type="text" id="name" name="name" class="border p-[8px] rounded w-[300px]" required>
-                </div>
-                <div class="mb-[10px]">
-                    <label for="email" class="block mb-[5px]">Email:</label>
-                    <input type="email" id="email" name="email" class="border p-[8px] rounded w-[300px]" required>
-                </div>
-                <div class="mb-[10px]">
-                    <label for="message" class="block mb-[5px]">Pesan:</label>
-                    <textarea id="message" name="message" class="border p-[8px] rounded w-[300px] h-[100px]"
-                        required></textarea>
-                </div>
-                <button type="button" onclick="validateForm()"
-                    class="bg-blue-500 text-white p-[10px] rounded hover:bg-blue-600">Send</button>
-            </form>
-        </section>
-    </main>
-    <br class="garisterakhir">
-    <footer>
-        <p class="bawahan">@2025 Depot Kayu Kembang Jaya. All rights reserved.</p>
-    </footer>
-    <script src="js/script.js"></script>
+</main>
+
+<footer>
+    <p>© 2025 Depot Kayu Kembang Jaya</p>
+</footer>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    if (!name || !email || !message) {
+        alert("Isi semua field dulu bro");
+        return false;
+    }
+
+    alert("Pesan berhasil dikirim!");
+    return true;
+}
+</script>
+
 </body>
 </html>
