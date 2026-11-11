@@ -1,214 +1,705 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Depot Kayu Kembang Jaya</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depot Kayu Kembang Jaya — Kayu Konstruksi, Kusen &amp; Material Bangunan</title>
+    <meta name="description" content="Depot Kayu Kembang Jaya menyediakan berbagai jenis kayu konstruksi (Glugu, Mahoni, Sengon, Kayu Jawa, Kayu Kalimantan), Triplek, Material bangunan, serta jasa potong, serut, dan pembuatan kusen pintu jendela.">
+    <link rel="icon" type="image/png" href="assets/depot_kayu_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("kembang_jaya_theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (saved === "dark" || (!saved && prefersDark)) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <!-- Top App Bar Header (mirrors AppBar & AppDrawer from depot_kayu_app) -->
+    <header class="app-header" id="topHeader">
+        <div class="container header-inner">
+            <a href="#beranda" class="brand-lockup" aria-label="Depot Kayu Kembang Jaya">
+                <span class="brand-logo-wrap">
+                    <img src="assets/depot_kayu_logo.png" alt="Logo Depot Kayu Kembang Jaya" width="40" height="40">
+                </span>
+                <span class="brand-text">
+                    <strong class="brand-name">Kembang Jaya</strong>
+                    <span class="brand-sub">Depot Kayu &amp; Material</span>
+                </span>
+            </a>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-      <img src="assets/Depotkayu.jpg" width="40" height="40" class="rounded-circle">
-      Depot Kayu
-    </a>
+            <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+                <ul class="nav-list">
+                    <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                    <li><a href="#katalog" class="nav-link">Katalog Kayu</a></li>
+                    <li><a href="#layanan" class="nav-link">Layanan</a></li>
+                    <li><a href="#tentang" class="nav-link">Profil &amp; Sistem</a></li>
+                    <li><a href="#kontak" class="nav-link">Hubungi Kami</a></li>
+                </ul>
+            </nav>
 
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
-        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-      </ul>
-    </div>
-
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <div class="col-md-6">
-        <h1>Depot Kayu Kembang Jaya</h1>
-        <p>Menyediakan berbagai jenis kayu berkualitas untuk kebutuhan konstruksi Anda.</p>
-        <a href="https://wa.me/6281237965000" class="btn btn-warning">Order Sekarang</a>
-      </div>
-
-      <div class="col-md-6">
-        <img src="assets/gambardepan.jpg" class="img-fluid rounded">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRODUK -->
-<section id="produk" class="py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">Produk Unggulan</h2>
-
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="card">
-          <img src="assets/kayuglugu.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Kayu Glugu</h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card">
-          <img src="assets/kayumahoni.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Kayu Mahoni</h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card">
-          <img src="assets/kayusengon.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Kayu Sengon</h5>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- KONTAK -->
-<section id="kontak" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Hubungi Kami</h2>
-
-    <form onsubmit="return validateForm()" class="mx-auto" style="max-width: 500px;">
-      <div class="mb-3">
-        <input type="text" id="name" class="form-control" placeholder="Nama">
-      </div>
-
-      <div class="mb-3">
-        <input type="email" id="email" class="form-control" placeholder="Email">
-      </div>
-
-      <div class="mb-3">
-        <textarea id="message" class="form-control" rows="4" placeholder="Pesan"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-dark w-100">Kirim</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-dark text-white text-center py-3">
-  <p class="mb-0">© 2025 Depot Kayu Kembang Jaya</p>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- JS LO -->
-<script>
-function validateForm() {
-  let name = document.getElementById("name").value.trim();
-  let email = document.getElementById("email").value.trim();
-  let message = document.getElementById("message").value.trim();
-
-  if (!name || !email || !message) {
-    alert("Isi semua field dulu bro");
-    return false;
-  }
-
-  alert("Pesan berhasil dikirim!");
-  return false;
-}
-</script>
-
-</body>
-</html>            </p>
-            <a href="https://wa.me/6281237965000" class="btn">Order Sekarang</a>
-        </div>
-
-        <img src="assets/gambardepan.jpg" alt="Depot Kayu">
-    </div>
-</section>
-
-<section id="produk" class="produk">
-    <div class="container">
-        <h2>Produk Unggulan</h2>
-
-        <div class="product-grid">
-
-            <div class="card">
-                <img src="assets/kayuglugu.jpg" alt="Kayu Glugu">
-                <h3>Kayu Glugu</h3>
+            <div class="header-actions">
+                <button type="button" class="icon-btn theme-toggle" id="themeToggle" aria-label="Ubah tema terang atau gelap" title="Ubah Tema">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </button>
+                <a href="https://wa.me/6281237965000?text=Halo%20Depot%20Kayu%20Kembang%20Jaya%2C%20saya%20ingin%20bertanya%20mengenai%20stok%20dan%20harga%20kayu." class="btn btn-primary btn-sm header-cta" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    <span>Chat WA</span>
+                </a>
+                <button type="button" class="icon-btn menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Buka menu navigasi">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="17" y2="12"></line>
+                        <line x1="3" y1="18" x2="13" y2="18"></line>
+                    </svg>
+                </button>
             </div>
-
-            <div class="card">
-                <img src="assets/kayumahoni.jpg" alt="Kayu Mahoni">
-                <h3>Kayu Mahoni</h3>
-            </div>
-
-            <div class="card">
-                <img src="assets/kayusengon.jpg" alt="Kayu Sengon">
-                <h3>Kayu Sengon</h3>
-            </div>
-
         </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer (mirrors AppDrawer in depot_kayu_app) -->
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-label="Menu seluler">
+        <div class="drawer-header">
+            <div class="drawer-brand">
+                <img src="assets/depot_kayu_logo.png" alt="Logo Kembang Jaya" width="44" height="44">
+                <div>
+                    <strong>Kembang Jaya</strong>
+                    <span>Kedungwuni, Pekalongan</span>
+                </div>
+            </div>
+            <button type="button" class="icon-btn drawer-close" id="drawerClose" aria-label="Tutup menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 6 6 18M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="drawer-divider"></div>
+        <nav class="drawer-nav">
+            <a href="#beranda" class="drawer-item active">Beranda</a>
+            <a href="#katalog" class="drawer-item">Katalog Kayu &amp; Jasa</a>
+            <a href="#layanan" class="drawer-item">Layanan &amp; Keunggulan</a>
+            <a href="#tentang" class="drawer-item">Profil &amp; Sistem POS</a>
+            <a href="#kontak" class="drawer-item">Hubungi Kami</a>
+        </nav>
+        <div class="drawer-footer">
+            <a href="https://wa.me/6281237965000?text=Halo%20Depot%20Kayu%20Kembang%20Jaya%2C%20saya%20ingin%20konsultasi%20pesanan%20kayu." class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+                Pesan via WhatsApp
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Hero Section (mirrors LoginScreen soft primarySurface -> background gradient) -->
+        <section id="beranda" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        <span>Depot Kayu &amp; Material Konstruksi • Pekalongan</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Kayu Konstruksi Berkualitas untuk Bangunan Kokoh dari Dasar
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        <strong>Depot Kayu Kembang Jaya</strong> menyediakan beragam pilihan kayu seperti Glugu (kelapa), Sengon, Mahoni, Kayu Jawa, Kayu Kalimantan, Triplek, serta layanan pembuatan kusen, daun pintu, jendela, dan jasa potong maupun serut langsung di tempat.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#katalog" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            <span>Jelajahi Katalog</span>
+                        </a>
+                        <a href="#kontak" class="btn btn-secondary">
+                            <span>Tanya Stok &amp; Harga</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-highlights">
+                        <div class="highlight-pill">
+                            <span class="highlight-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Harga Ecer &amp; Grosir</strong>
+                                <span>Potongan khusus proyek</span>
+                            </div>
+                        </div>
+                        <div class="highlight-pill">
+                            <span class="highlight-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Jasa Potong &amp; Serut</strong>
+                                <span>Kusen, pintu &amp; jendela</span>
+                            </div>
+                        </div>
+                        <div class="highlight-pill">
+                            <span class="highlight-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Siap Kirim Armada</strong>
+                                <span>Antar ke lokasi proyek</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="storefront-card">
+                        <div class="storefront-image-wrap">
+                            <img src="assets/gambardepan.jpg" alt="Tampak depan Depot Kayu Kembang Jaya beserta armada pengiriman" class="storefront-image">
+                            <div class="storefront-overlay-badge">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                <span>Buka Senin – Sabtu</span>
+                            </div>
+                        </div>
+                        <div class="storefront-card-footer">
+                            <div class="storefront-brand-row">
+                                <img src="assets/depot_kayu_logo.png" alt="" width="36" height="36" aria-hidden="true">
+                                <div>
+                                    <strong>Depot Kayu Kembang Jaya</strong>
+                                    <span>Kedungwuni, Kab. Pekalongan 51173</span>
+                                </div>
+                            </div>
+                            <span class="app-badge">Stok Terintegrasi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katalog Kayu & Jasa Section (mirrors SalesScreen & ProductScreen UI) -->
+        <section id="katalog" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Katalog Produk &amp; Jasa</span>
+                    <h2 class="section-title">Pilihan Kayu, Material &amp; Layanan Depot</h2>
+                    <p class="section-desc">
+                        Cari berdasarkan nama atau saring kategori seperti pada sistem kasir Kembang Jaya untuk mengecek pilihan kayu dan jasa yang tersedia.
+                    </p>
+                </div>
+
+                <!-- Search & Category Filter Bar (mirrors AppSearchBar + ChipTheme in depot_kayu_app) -->
+                <div class="catalog-controls">
+                    <div class="search-field-wrap">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="search" id="catalogSearch" class="app-input search-input" placeholder="Cari jenis kayu, triplek, atau jasa (mis. Glugu, Kusen)..." aria-label="Cari produk kayu atau jasa">
+                    </div>
+
+                    <div class="chip-group" role="tablist" aria-label="Filter kategori produk">
+                        <button type="button" class="chip active" data-category="all" role="tab" aria-selected="true">Semua</button>
+                        <button type="button" class="chip" data-category="kayu" role="tab" aria-selected="false">Kayu Konstruksi</button>
+                        <button type="button" class="chip" data-category="material" role="tab" aria-selected="false">Triplek &amp; Material</button>
+                        <button type="button" class="chip" data-category="jasa" role="tab" aria-selected="false">Jasa &amp; Pesanan</button>
+                    </div>
+                </div>
+
+                <!-- Product Cards Grid -->
+                <div class="catalog-grid" id="catalogGrid">
+                    <article class="product-card" data-category="kayu" data-keywords="kayu glugu kelapa balok kaso atap struktur">
+                        <div class="product-media">
+                            <img src="assets/kayuglugu.jpg" alt="Stok Kayu Glugu berkualitas di Depot Kayu Kembang Jaya" loading="lazy">
+                            <span class="product-tag">Kayu Balok</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-head">
+                                <span class="product-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Kayu Glugu (Kelapa)</h3>
+                                    <p class="product-meta">Batang / Kubik • Ecer &amp; Grosir</p>
+                                </div>
+                            </div>
+                            <p class="product-desc">
+                                Kayu kelapa padat dan kuat untuk struktur atap, usuk, kaso, serta penyangga konstruksi bangunan.
+                            </p>
+                            <div class="product-actions">
+                                <a href="https://wa.me/6281237965000?text=Halo%20Kembang%20Jaya%2C%20saya%20ingin%20tanya%20harga%20dan%20ukuran%20Kayu%20Glugu." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Tanya via WA</a>
+                                <button type="button" class="btn btn-secondary btn-sm btn-inquiry" data-product="Kayu Glugu (Kelapa)">Isi Form</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="kayu" data-keywords="kayu mahoni papan balok kusen pintu jendela furnitur">
+                        <div class="product-media">
+                            <img src="assets/kayumahoni.jpg" alt="Tumpukan papan dan balok Kayu Mahoni" loading="lazy">
+                            <span class="product-tag">Kayu Balok &amp; Papan</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-head">
+                                <span class="product-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Kayu Mahoni</h3>
+                                    <p class="product-meta">Batang / Lembar • Serat Halus</p>
+                                </div>
+                            </div>
+                            <p class="product-desc">
+                                Pilihan favorit untuk kusen, daun pintu, jendela, dan pekerjaan interior berkat seratnya yang rapi dan stabil.
+                            </p>
+                            <div class="product-actions">
+                                <a href="https://wa.me/6281237965000?text=Halo%20Kembang%20Jaya%2C%20saya%20ingin%20tanya%20harga%20dan%20ukuran%20Kayu%20Mahoni." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Tanya via WA</a>
+                                <button type="button" class="btn btn-secondary btn-sm btn-inquiry" data-product="Kayu Mahoni">Isi Form</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="kayu" data-keywords="kayu sengon papan cor bekisting ringan">
+                        <div class="product-media">
+                            <img src="assets/kayusengon.jpg" alt="Papan Kayu Sengon tersusun rapi di depot" loading="lazy">
+                            <span class="product-tag">Papan &amp; Kaso</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-head">
+                                <span class="product-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Kayu Sengon</h3>
+                                    <p class="product-meta">Batang / Ikat • Ekonomis</p>
+                                </div>
+                            </div>
+                            <p class="product-desc">
+                                Ringan, mudah dipaku, dan hemat biaya untuk kebutuhan papan cor, bekisting pengecoran, dan proyek bangunan.
+                            </p>
+                            <div class="product-actions">
+                                <a href="https://wa.me/6281237965000?text=Halo%20Kembang%20Jaya%2C%20saya%20ingin%20tanya%20harga%20dan%20ukuran%20Kayu%20Sengon." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Tanya via WA</a>
+                                <button type="button" class="btn btn-secondary btn-sm btn-inquiry" data-product="Kayu Sengon">Isi Form</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="kayu" data-keywords="kayu kalimantan meranti sumatra jawa jati belanda balok">
+                        <div class="product-media product-media-graphic">
+                            <div class="graphic-emblem">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="8" y="16" width="48" height="12" rx="3"></rect>
+                                    <rect x="12" y="32" width="40" height="12" rx="3"></rect>
+                                    <path d="M16 22h12M36 22h12M20 38h16"></path>
+                                </svg>
+                            </div>
+                            <span class="product-tag">Kayu Keras</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-head">
+                                <span class="product-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Kayu Kalimantan &amp; Jawa</h3>
+                                    <p class="product-meta">Meranti, Sumatra &amp; Jati Belanda</p>
+                                </div>
+                            </div>
+                            <p class="product-desc">
+                                Kayu keras berkualitas (Meranti, Sumatra, Kayu Jawa, hingga Jati Belanda) untuk rangka berat dan konstruksi tahan lama.
+                            </p>
+                            <div class="product-actions">
+                                <a href="https://wa.me/6281237965000?text=Halo%20Kembang%20Jaya%2C%20saya%20ingin%20cek%20stok%20Kayu%20Kalimantan%20%2F%20Meranti%20%2F%20Kayu%20Jawa." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Tanya via WA</a>
+                                <button type="button" class="btn btn-secondary btn-sm btn-inquiry" data-product="Kayu Kalimantan / Meranti / Kayu Jawa">Isi Form</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="material" data-keywords="triplek multiplek kayu lapis 9mm lem paku engsel pintu material">
+                        <div class="product-media product-media-graphic">
+                            <div class="graphic-emblem">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <polygon points="32 10 56 22 32 34 8 22 32 10"></polygon>
+                                    <polyline points="8 32 32 44 56 32"></polyline>
+                                    <polyline points="8 42 32 54 56 42"></polyline>
+                                </svg>
+                            </div>
+                            <span class="product-tag">Triplek &amp; Material</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-head">
+                                <span class="product-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Triplek &amp; Material Pendukung</h3>
+                                    <p class="product-meta">Triplek, Paku, Lem Kayu &amp; Engsel</p>
+                                </div>
+                            </div>
+                            <p class="product-desc">
+                                Lengkap dengan Triplek berbagai ketebalan, paku bangunan, lem kayu, dan engsel pintu agar kebutuhan proyek beres dalam satu tempat.
+                            </p>
+                            <div class="product-actions">
+                                <a href="https://wa.me/6281237965000?text=Halo%20Kembang%20Jaya%2C%20saya%20ingin%20tanya%20stok%20Triplek%20dan%20material%20pendukung." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Tanya via WA</a>
+                                <button type="button" class="btn btn-secondary btn-sm btn-inquiry" data-product="Triplek & Material Pendukung">Isi Form</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="jasa" data-keywords="jasa potong kayu serut pasah kusen daun pintu jendela pesanan custom">
+                        <div class="product-media product-media-graphic">
+                            <div class="graphic-emblem">
+                                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M18 12h28v40H18z"></path>
+                                    <path d="M24 18h16v14H24z"></path>
+                                    <circle cx="40" cy="38" r="2"></circle>
+                                </svg>
+                            </div>
+                            <span class="product-tag badge-jasa">Jasa &amp; Custom</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-head">
+                                <span class="product-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Kusen, Pintu &amp; Jasa Potong/Serut</h3>
+                                    <p class="product-meta">Sesuai Ukuran &amp; Denah Proyek</p>
+                                </div>
+                            </div>
+                            <p class="product-desc">
+                                Melayani pembuatan kusen, daun pintu, dan jendela custom serta jasa potong kayu dan serut/pasah agar material langsung siap pasang.
+                            </p>
+                            <div class="product-actions">
+                                <a href="https://wa.me/6281237965000?text=Halo%20Kembang%20Jaya%2C%20saya%20ingin%20pesan%20kusen%2Fpintu%20atau%20jasa%20potong%20serut%20kayu." class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Tanya via WA</a>
+                                <button type="button" class="btn btn-secondary btn-sm btn-inquiry" data-product="Pesanan Kusen / Pintu / Jasa Potong & Serut">Isi Form</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="empty-state" id="catalogEmptyState" hidden>
+                    <div class="empty-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <h3>Produk atau jasa tidak ditemukan</h3>
+                    <p>Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+                    <button type="button" class="btn btn-secondary btn-sm" id="resetCatalogFilter">Tampilkan Semua</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan & Keunggulan Section -->
+        <section id="layanan" class="section section-tinted">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Mengapa Kembang Jaya</span>
+                    <h2 class="section-title">Layanan Lengkap untuk Rumah &amp; Proyek</h2>
+                    <p class="section-desc">
+                        Mendukung kebutuhan pemilik rumah, tukang kayu, hingga kontraktor dengan stok terjaga dan pelayanan transparan.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3>Sortir Mutu &amp; Grade Jelas</h3>
+                        <p>Setiap kayu disortir berdasarkan grade dan ukuran sehingga kualitas struktur bangunan Anda tetap terjaga.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3>Potong, Serut &amp; Kusen Custom</h3>
+                        <p>Tidak perlu repot mengolah ulang di lokasi proyek. Tersedia jasa potong, pasah, dan pesanan kusen pintu jendela.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="5" x2="5" y2="19"></line>
+                                <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                                <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <h3>Harga Ecer &amp; Grosir Tukang</h3>
+                        <p>Skema harga bertingkat dan potongan khusus untuk pembelian grosir maupun pelanggan tukang langganan.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>Nota Rapi &amp; Transparan</h3>
+                        <p>Setiap transaksi tercatat melalui sistem kasir Kembang Jaya POS dengan struk terperinci dan pengiriman armada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil & Integrasi Sistem POS (matches StrukScreen & Kembang Jaya POS visual aesthetic) -->
+        <section id="tentang" class="section">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <span class="section-kicker">Tentang Depot &amp; Sistem Kami</span>
+                    <h2 class="section-title">Depot Kayu Tradisional dengan Manajemen Modern</h2>
+                    <p>
+                        Berlokasi di Kedungwuni, Kabupaten Pekalongan, <strong>Depot Kayu Kembang Jaya</strong> berkomitmen menyediakan kayu konstruksi yang tepat ukuran, harga bersahabat, dan pengiriman tepat waktu.
+                    </p>
+                    <p>
+                        Operasional toko kami telah terintegrasi dengan aplikasi <strong>Kembang Jaya POS</strong> untuk memantau ketersediaan stok per ukuran, pencatatan mutasi grade kayu, transaksi ecer maupun grosir, hingga pencetakan struk belanja yang rapi bagi setiap pelanggan.
+                    </p>
+
+                    <ul class="checklist">
+                        <li>
+                            <span class="check-badge" aria-hidden="true">✓</span>
+                            <span>Stok kayu balok, papan, triplek &amp; material selalu terpantau rapi</span>
+                        </li>
+                        <li>
+                            <span class="check-badge" aria-hidden="true">✓</span>
+                            <span>Rincian harga ecer, grosir, diskon tukang, dan biaya jasa transparan</span>
+                        </li>
+                        <li>
+                            <span class="check-badge" aria-hidden="true">✓</span>
+                            <span>Struk cetak &amp; ringkasan tagihan dapat dibagikan langsung via WhatsApp</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Visual Receipt / POS Preview Card styled directly from StrukScreen in depot_kayu_app -->
+                <div class="pos-showcase">
+                    <div class="receipt-card" aria-label="Contoh tampilan struk digital Kembang Jaya POS">
+                        <div class="receipt-top">
+                            <img src="assets/depot_kayu_logo.png" alt="Logo Kembang Jaya POS" width="48" height="48">
+                            <strong>KEMBANG JAYA</strong>
+                            <span>Kedungwuni, Pekalongan 51173</span>
+                            <span>Telp / WA: 0812-3796-5000</span>
+                        </div>
+
+                        <div class="receipt-dashed"></div>
+
+                        <div class="receipt-meta">
+                            <span>Layanan Sistem</span>
+                            <strong>Kembang Jaya POS</strong>
+                        </div>
+                        <div class="receipt-meta">
+                            <span>Skema Harga</span>
+                            <strong>Ecer &amp; Grosir</strong>
+                        </div>
+
+                        <div class="receipt-dashed"></div>
+
+                        <div class="receipt-items">
+                            <div class="receipt-item">
+                                <div>
+                                    <strong>Kayu Glugu &amp; Kalimantan</strong>
+                                    <span>Ukuran Balok / Kaso • Tersedia</span>
+                                </div>
+                                <span class="receipt-tag">Stok Ready</span>
+                            </div>
+                            <div class="receipt-item">
+                                <div>
+                                    <strong>Kayu Mahoni &amp; Sengon</strong>
+                                    <span>Papan / Kusen / Cor • Tersedia</span>
+                                </div>
+                                <span class="receipt-tag">Stok Ready</span>
+                            </div>
+                            <div class="receipt-item">
+                                <div>
+                                    <strong>Jasa Potong &amp; Serut / Pasah</strong>
+                                    <span>Pengerjaan Sesuai Ukuran</span>
+                                </div>
+                                <span class="receipt-tag badge-jasa">Jasa</span>
+                            </div>
+                        </div>
+
+                        <div class="receipt-dashed"></div>
+
+                        <p class="receipt-footer-note">
+                            Terima kasih telah berbelanja di Depot Kayu Kembang Jaya
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hubungi Kami Section (mirrors AppCard & AppTextField styling) -->
+        <section id="kontak" class="section section-contact">
+            <div class="container contact-grid">
+                <div class="contact-info-card">
+                    <span class="section-kicker">Hubungi Kami</span>
+                    <h2 class="section-title">Butuh Hitungan Kubikasi atau Pesan Kayu?</h2>
+                    <p class="contact-lead">
+                        Kirim daftar ukuran kayu yang Anda perlukan atau kunjungi langsung depot kami. Tim Kembang Jaya siap membantu menghitung estimasi kebutuhan material proyek Anda.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-row">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Lokasi Depot</strong>
+                                <span>Kedungwuni, Kab. Pekalongan, Jawa Tengah 51173</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>WhatsApp / Telepon</strong>
+                                <a href="https://wa.me/6281237965000" target="_blank" rel="noopener noreferrer">+62 812-3796-5000</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Jam Operasional</strong>
+                                <span>Senin – Sabtu, 07.30 – 16.30 WIB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6281237965000?text=Halo%20Depot%20Kayu%20Kembang%20Jaya%2C%20saya%20ingin%20bertanya%20mengenai%20pemesanan%20kayu." class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+                        Chat Langsung di WhatsApp
+                    </a>
+                </div>
+
+                <div class="form-card">
+                    <h3>Form Permintaan Harga &amp; Pesanan</h3>
+                    <p class="form-sub">Isi detail kebutuhan Anda, lalu kirim langsung ke WhatsApp admin depot.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="app-input" placeholder="Masukkan nama Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email atau No. WhatsApp</label>
+                            <input type="text" id="email" name="email" class="app-input" placeholder="contoh: 0812xxxx atau email@domain.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="need">Kebutuhan Utama</label>
+                            <select id="need" name="need" class="app-input">
+                                <option value="Tanya Harga & Stok Kayu">Tanya Harga &amp; Stok Kayu</option>
+                                <option value="Pesanan Kusen / Daun Pintu / Jendela">Pesanan Kusen / Daun Pintu / Jendela</option>
+                                <option value="Jasa Potong & Serut / Pasah">Jasa Potong &amp; Serut / Pasah</option>
+                                <option value="Order Proyek / Grosir">Order Proyek / Pembelian Grosir</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Pesan &amp; Rincian Ukuran</label>
+                            <textarea id="message" name="message" class="app-input app-textarea" placeholder="Tulis jenis kayu, ukuran, jumlah, atau alamat kirim..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Kirim Pesan via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="assets/depot_kayu_logo.png" alt="Logo Depot Kayu Kembang Jaya" width="36" height="36">
+                <div>
+                    <strong>Depot Kayu Kembang Jaya</strong>
+                    <span>Kedungwuni, Pekalongan • Kayu Konstruksi, Kusen &amp; Material</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#katalog">Katalog</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#tentang">Profil</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="currentYear">2026</span> Depot Kayu Kembang Jaya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Snackbar Notification (mirrors showStatusSnackBar from status_dialog.dart) -->
+    <div class="snackbar" id="statusSnackbar" role="status" aria-live="polite" hidden>
+        <span class="snackbar-icon" id="snackbarIcon" aria-hidden="true"></span>
+        <span class="snackbar-message" id="snackbarMessage"></span>
     </div>
-</section>
 
-<section id="kontak" class="kontak">
-    <div class="container">
-        <h2>Hubungi Kami</h2>
-
-        <form onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="Nama">
-            <input type="email" id="email" placeholder="Email">
-            <textarea id="message" placeholder="Pesan"></textarea>
-            <button type="submit">Kirim</button>
-        </form>
-    </div>
-</section>
-
-</main>
-
-<footer>
-    <p>© 2025 Depot Kayu Kembang Jaya</p>
-</footer>
-
-<script>
-function validateForm() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    if (!name || !email || !message) {
-        alert("Isi semua field dulu bro");
-        return false;
-    }
-
-    alert("Pesan berhasil dikirim!");
-    return true;
-}
-</script>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
